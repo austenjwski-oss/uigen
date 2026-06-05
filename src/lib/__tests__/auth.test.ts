@@ -95,13 +95,11 @@ test("createSession includes expiresAt in the token payload", async () => {
 });
 
 test("createSession sets secure:false outside production", async () => {
-  const original = process.env.NODE_ENV;
-  // NODE_ENV is "test" in vitest
+  // NODE_ENV is "test" in vitest — no override needed
   await createSession("user-1", "test@example.com");
 
   const [, , options] = mockCookieStore.set.mock.calls[0];
   expect(options.secure).toBe(false);
-  process.env.NODE_ENV = original;
 });
 
 test("createSession sets secure:true in production", async () => {

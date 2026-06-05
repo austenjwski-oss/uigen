@@ -4,3 +4,8 @@ CLAUDE.local.md
 node_modules/
 .next/
 prisma/dev.db
+.playwright-mcp/
+logs.txt
+.enecho
+.npm
+tsconfig.tsbuildinfo

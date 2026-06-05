@@ -71,7 +71,7 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
                                 toolName={tool.toolName}
                                 args={tool.args}
                                 state={tool.state}
-                                result={tool.result}
+                                result={'result' in tool ? tool.result : undefined}
                               />
                             );
                           case "source":
